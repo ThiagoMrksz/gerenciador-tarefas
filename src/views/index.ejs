@@ -1,0 +1,38 @@
+<%- include('partials/header', { titulo: 'Minhas tarefas' }) %>
+
+<nav class="filtros">
+  <a href="/?status=todas" class="<%= filtro === 'todas' ? 'ativo' : '' %>">Todas</a>
+  <a href="/?status=pendente" class="<%= filtro === 'pendente' ? 'ativo' : '' %>">Pendentes</a>
+  <a href="/?status=concluida" class="<%= filtro === 'concluida' ? 'ativo' : '' %>">Concluídas</a>
+</nav>
+
+<% if (tarefas.length === 0) { %>
+  <p class="vazio">Nenhuma tarefa encontrada.</p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr><th>Título</th><th>Disciplina</th><th>Status</th><th>Ações</th></tr>
+    </thead>
+    <tbody>
+      <% tarefas.forEach((t) => { %>
+        <tr>
+          <td><a href="/tarefas/<%= t.id %>"><%= t.titulo %></a></td>
+          <td><%= t.disciplina %></td>
+          <td><span class="status <%= t.status %>"><%= t.status === 'concluida' ? 'Concluída' : 'Pendente' %></span></td>
+          <td class="acoes">
+            <a href="/tarefas/<%= t.id %>">Detalhes</a>
+            <a href="/tarefas/<%= t.id %>/editar">Editar</a>
+            <% if (t.status === 'pendente') { %>
+              <form method="POST" action="/tarefas/<%= t.id %>/concluir">
+                <button type="submit">Concluir</button>
+              </form>
+            <% } %>
+            <a class="perigo" href="/tarefas/<%= t.id %>/excluir">Excluir</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

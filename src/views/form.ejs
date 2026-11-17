@@ -1,0 +1,30 @@
+<%- include('partials/header', { titulo: titulo }) %>
+
+<h2><%= titulo %></h2>
+
+<% if (erros.length > 0) { %>
+  <ul class="erros">
+    <% erros.forEach((e) => { %><li><%= e %></li><% }) %>
+  </ul>
+<% } %>
+
+<form method="POST" action="<%= acao %>" class="formulario">
+  <label>Título *
+    <input type="text" name="titulo" value="<%= tarefa.titulo %>" maxlength="100">
+  </label>
+
+  <label>Disciplina *
+    <input type="text" name="disciplina" value="<%= tarefa.disciplina %>" maxlength="80">
+  </label>
+
+  <label>Descrição (opcional)
+    <textarea name="descricao" rows="5" maxlength="500"><%= tarefa.descricao %></textarea>
+  </label>
+
+  <div class="botoes">
+    <button type="submit" class="btn">Salvar</button>
+    <a href="<%= tarefa.id ? '/tarefas/' + tarefa.id : '/' %>">Cancelar</a>
+  </div>
+</form>
+
+<%- include('partials/footer') %>

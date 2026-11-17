@@ -1,0 +1,24 @@
+<%- include('partials/header', { titulo: tarefa.titulo }) %>
+
+<h2><%= tarefa.titulo %></h2>
+
+<dl class="detalhes">
+  <dt>ID</dt><dd><%= tarefa.id %></dd>
+  <dt>Disciplina</dt><dd><%= tarefa.disciplina %></dd>
+  <dt>Descrição</dt><dd><%= tarefa.descricao || 'Sem descrição.' %></dd>
+  <dt>Status</dt>
+  <dd><span class="status <%= tarefa.status %>"><%= tarefa.status === 'concluida' ? 'Concluída' : 'Pendente' %></span></dd>
+</dl>
+
+<div class="botoes">
+  <a href="/tarefas/<%= tarefa.id %>/editar">Editar</a>
+  <% if (tarefa.status === 'pendente') { %>
+    <form method="POST" action="/tarefas/<%= tarefa.id %>/concluir">
+      <button type="submit">Concluir</button>
+    </form>
+  <% } %>
+  <a class="perigo" href="/tarefas/<%= tarefa.id %>/excluir">Excluir</a>
+  <a href="/">Voltar</a>
+</div>
+
+<%- include('partials/footer') %>

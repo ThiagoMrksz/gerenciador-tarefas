@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; color: #222; }
+header { background: #2c3e50; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+header h1 { margin: 0; font-size: 1.3rem; }
+header h1 a { color: #fff; text-decoration: none; }
+main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+a { color: #2c7be5; }
+.btn, button { background: #2c7be5; color: #fff; border: 0; padding: 8px 14px; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 0.9rem; }
+button.perigo, a.perigo { color: #c0392b; }
+button.perigo { background: #c0392b; color: #fff; }
+.filtros { display: flex; gap: 8px; margin-bottom: 16px; }
+.filtros a { padding: 6px 14px; border: 1px solid #2c7be5; border-radius: 16px; text-decoration: none; }
+.filtros a.ativo { background: #2c7be5; color: #fff; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { padding: 10px; border-bottom: 1px solid #e3e6ea; text-align: left; }
+.acoes { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.acoes form, .botoes form { margin: 0; }
+.status { padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+.status.pendente { background: #fff3cd; color: #856404; }
+.status.concluida { background: #d4edda; color: #155724; }
+.vazio { text-align: center; color: #666; padding: 32px; }
+.formulario { display: flex; flex-direction: column; gap: 14px; background: #fff; padding: 20px; border-radius: 6px; }
+.formulario label { display: flex; flex-direction: column; gap: 4px; font-weight: bold; }
+.formulario input, .formulario textarea { padding: 8px; border: 1px solid #ccc; border-radius: 4px; font: inherit; }
+.erros { background: #f8d7da; color: #721c24; padding: 12px 12px 12px 32px; border-radius: 4px; }
+.detalhes { background: #fff; padding: 16px; border-radius: 6px; }
+.detalhes dt { font-weight: bold; margin-top: 10px; }
+.detalhes dd { margin: 4px 0 0; }
+.botoes { display: flex; gap: 14px; align-items: center; margin-top: 16px; }
