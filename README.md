@@ -23,11 +23,6 @@ src/views/*.ejs                 # VIEW: páginas HTML
 public/style.css                # estilos
 ```
 
-## Regras de validação
-- titulo: obrigatório, 3 a 100 caracteres
-- descricao: opcional, até 500 caracteres
-- disciplina: obrigatória, 2 a 80 caracteres
-- status: `pendente` (inicial) ou `concluida`
 
 ## Rotas
 | Método | Rota | Ação |
